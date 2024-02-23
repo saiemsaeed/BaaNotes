@@ -28,7 +28,7 @@ const Input = ({ addTodo }: Props) => {
     <TextField.Root
       variant="surface"
       size="3"
-      className="border-0 border-solid border-foreground pl-4 font-mono"
+      className="border-0 border-solid border-foreground font-mono"
       style={{ height: '4rem' }}
     >
       <TextField.Input
@@ -39,7 +39,6 @@ const Input = ({ addTodo }: Props) => {
         placeholder="Write your mind…"
         radius="medium"
         size="3"
-        className="text-xl"
         onKeyDown={handleKeyDown}
       />
       <TextField.Slot pr="3">
