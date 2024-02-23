@@ -14,8 +14,8 @@ interface Props {
 const Checkbox = ({ id, label, isCompleted, updateDodo }: Props) => (
   <Flex align="center">
     <RadixCheckbox.Root
-      className="flex h-[25px] w-[25px] appearance-none items-center justify-center
-        rounded-[4px] border-2 border-solid border-background bg-white outline-none hover:bg-violet3
+      className="flex h-[24px] w-[24px] appearance-none items-center justify-center
+        rounded-[4px] border-2 border-solid border-violet3 bg-white outline-none 
         "
       onClick={() => updateDodo(!isCompleted)}
       checked={isCompleted}

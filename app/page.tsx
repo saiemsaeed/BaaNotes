@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <Container className={`mx-4`}>
-      <div className="-ml-4 -mr-4 mb-4 bg-foreground px-4 py-6 font-mono">
+      <div className="-ml-4 -mr-4 mb-4 bg-violet7 px-4 py-6 font-mono">
         made with ❤️
       </div>
 
@@ -72,7 +72,8 @@ export default function Home() {
           </Flex>
         </Box>
       ))}
-      <div className="fixed bottom-10 left-4 right-4">
+      <Box height="100px" />
+      <div className="fixed bottom-0 left-0 right-0 bg-white p-4">
         <Input addTodo={addTodo} />
       </div>
     </Container>
