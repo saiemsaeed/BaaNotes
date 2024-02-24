@@ -12,21 +12,21 @@ const ListItem = ({
   onDoubleTap,
   ...props
 }: PropsWithChildren<ListItemProps>) => {
-  let tapCount = 0; // Initialize tap count
-  let tapTimer: NodeJS.Timeout; // Initialize tap timer
-
   const buttonRef = useRef<HTMLDivElement>(null);
 
   // Function to handle tap
-  const handleTap = (
-    (tapCount: number = 0, tapTimer: NodeJS.Timeout | undefined = undefined) =>
-    () => {
-      tapCount++; // Increment tap count
+  const handleTap = () => {
+    let tapCount = 0; // Initialize tap count
+    let tapTimer: NodeJS.Timeout; // Initialize tap timer
+
+    return () => {
+      tapCount++; // Increase tap count
 
       // If it's the first tap, start the timer
       if (tapCount === 1) {
         tapTimer = setTimeout(() => {
           // Reset tap count after 500ms
+          console.log('object 1 timer');
           tapCount = 0;
         }, 500);
       } else if (tapCount === 2) {
@@ -35,14 +35,14 @@ const ListItem = ({
         clearTimeout(tapTimer); // Clear the timer
         tapCount = 0; // Reset tap count
       }
-    }
-  )();
+    };
+  };
 
   return (
     <Box
       ref={buttonRef}
-      // onClick={handleTap}
-      onTouchEnd={handleTap}
+      // onClick={handleTap()}
+      onTouchEnd={handleTap()}
       {...props}
     >
       {children}
