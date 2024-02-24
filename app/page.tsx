@@ -3,6 +3,7 @@
 import { dodoAtom } from '@/atoms/dodo';
 import Checkbox from '@/components/checkbox';
 import Input from '@/components/input';
+import ListItem from '@/components/list-item';
 import ThemeSwitch from '@/components/theme-switch';
 import { DotsVerticalIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
 import {
@@ -62,37 +63,22 @@ export default function Home() {
         <Input addTodo={addTodo} />
       </div>
       {dodos.map((dodo, index) => (
-        <Box
+        <ListItem
           key={index}
-          className={`font-mono text-xl  ${
+          className={`font-mono text-xl ${
             index === 0 ? '' : 'mt-4 border-t-2 border-background pt-4'
           }`}
+          onDoubleTap={() => {
+            updateDodo(index, !dodo.completed);
+          }}
         >
-          <Flex className="mb-2" gap="0">
-            <Box
-              onTouchEnd={(e) => {
-                e.preventDefault();
-                updateDodo(index, !dodo.completed);
-              }}
-              className="flex-grow"
-            >
-              <Checkbox
-                id={dodo.id}
-                label={dodo.text}
-                isCompleted={dodo.completed}
-                updateDodo={(isComplete) => updateDodo(index, isComplete)}
-              />
-            </Box>
-            {/* <IconButton size="4" variant="ghost" radius="full">
-              <DotsVerticalIcon
-                height="24"
-                width="24"
-                className="fill-violet8"
-                color="violet8"
-              />
-            </IconButton> */}
-          </Flex>
-        </Box>
+          <Checkbox
+            id={dodo.id}
+            label={dodo.text}
+            isCompleted={dodo.completed}
+            updateDodo={(isComplete) => updateDodo(index, isComplete)}
+          />
+        </ListItem>
       ))}
       <Box height="100px" />
       <div className="fixed bottom-0 left-0 right-0 bg-background p-4">
