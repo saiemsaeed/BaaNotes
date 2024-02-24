@@ -41,6 +41,7 @@ const Input = ({ addTodo }: Props) => {
           radius="medium"
           size="3"
           onKeyDown={handleKeyDown}
+          className=" outline-violet3"
         />
       </TextField.Root>
       <div className="ml-3">

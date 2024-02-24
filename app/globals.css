@@ -1,13 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '@radix-ui/colors/violet.css';
+@import '@radix-ui/colors/violet-dark.css';
 
 :root {
   --background: #edede9;
   --foreground: #ccd5ae;
+  --accent-light: var(--violet-6);
+  --accent: var(--violet-8);
+  --accent-dark: var(--violet-10);
+  --inverted: #000;
+}
+
+:root[class~='dark'] {
+  --background: hsl(240 10% 3.9%);
+  --foreground: hsl(0 0% 98%);
+  --accent-light: var(--violet-8);
+  --accent: var(--violet-5);
+  --accent-dark: var(--violet-3);
+  --inverted: #fff;
 }
 
 body {
-  color: rgb(var(--foreground));
+  color: var(--foreground);
   background: var(--background);
 }

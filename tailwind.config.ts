@@ -22,6 +22,10 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        accentLight: 'var(--accent-light)',
+        accent: 'var(--accent)',
+        accentDark: 'var(--accent-dark)',
+        inverted: 'var(--inverted)',
         ...blackA,
         ...violet,
       },
