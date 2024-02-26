@@ -31,7 +31,7 @@ const Input = ({ addTodo }: Props) => {
         type="text"
         placeholder="Write your mind..."
         onKeyDown={handleKeyDown}
-        className="h-10 bg-background font-mono"
+        className="h-10 bg-background font-mono text-[16px]"
       />
       <div className="ml-3">
         <Button
