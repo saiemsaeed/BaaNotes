@@ -2,26 +2,12 @@
 
 import { dodoAtom } from '@/atoms/dodo';
 import Checkbox from '@/components/checkbox';
+import Header from '@/components/header';
 import Input from '@/components/input';
 import ListItem from '@/components/list-item';
-import ThemeSwitch from '@/components/theme-switch';
-import { DotsVerticalIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
-import {
-  Box,
-  Container,
-  TextField,
-  Text,
-  IconButton,
-  Flex,
-} from '@radix-ui/themes';
 import { atom, useAtom } from 'jotai';
 import { nanoid } from 'nanoid';
 import dynamic from 'next/dynamic';
-import { Inter, JetBrains_Mono } from 'next/font/google';
-
-const ThemeSwitchButton = dynamic(() => import('@/components/theme-switch'), {
-  ssr: false,
-});
 
 export default function Home() {
   const [dodos, setDodos] = useAtom(dodoAtom);
@@ -49,24 +35,17 @@ export default function Home() {
   };
 
   return (
-    <Container className={`mx-4`}>
-      <Flex
-        align="center"
-        justify="between"
-        className="bg-accent -ml-4 -mr-4 mb-4 px-4 py-6 font-mono"
-      >
-        <Text>made with ❤️</Text>
-        <ThemeSwitchButton />
-      </Flex>
-
+    <div className="mx-4">
+      <Header />
+      <div className="h-14" />
       <div className="hidden ">
         <Input addTodo={addTodo} />
       </div>
       {dodos.map((dodo, index) => (
         <ListItem
           key={index}
-          className={`font-mono text-xl ${
-            index === 0 ? '' : 'mt-4 border-t-2 border-background pt-4'
+          className={`flex h-12 items-center font-sans text-xl ${
+            index === 0 ? '' : 'border-muted border-t-[1px]'
           }`}
           onDoubleTap={() => {
             updateDodo(index, !dodo.completed);
@@ -80,10 +59,10 @@ export default function Home() {
           />
         </ListItem>
       ))}
-      <Box height="100px" />
-      <div className="fixed bottom-0 left-0 right-0 bg-background p-4">
+      <div className=" h-28" />
+      <div className="bg-muted fixed bottom-0 left-0 right-0 h-14">
         <Input addTodo={addTodo} />
       </div>
-    </Container>
+    </div>
   );
 }

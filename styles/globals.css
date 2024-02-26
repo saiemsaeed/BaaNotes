@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '@radix-ui/colors/violet.css';
+@import '@radix-ui/colors/violet-dark.css';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --accent-light: var(--violet-6);
+    --accent: var(--violet-8);
+    --accent-foreground: var(--violet-10);
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240, 10%, 4%;
+    --foreground: 210 40% 98%;
+
+    --accent-light: var(--violet-8);
+    --accent: var(--violet-5);
+    --accent-foreground: var(--violet-3);
+
+    --muted: 0 0 10%;
+    --muted-foreground: 215 20.2% 65.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-accent-light;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

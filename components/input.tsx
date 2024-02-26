@@ -1,7 +1,7 @@
-import { Dodo } from '@/models/doto';
 import { PaperPlaneIcon } from '@radix-ui/react-icons';
-import { Flex, IconButton, TextField } from '@radix-ui/themes';
 import React from 'react';
+import { Button } from './ui/button';
+import { Input as TextField } from './ui/input';
 
 interface Props {
   addTodo: (newTodo: string) => void;
@@ -25,41 +25,30 @@ const Input = ({ addTodo }: Props) => {
   };
 
   return (
-    <Flex align="center">
-      <TextField.Root
-        variant="surface"
-        size="3"
-        className="flex-grow border-0 border-solid border-foreground font-mono"
-        style={{ height: '3rem' }}
-      >
-        <TextField.Input
-          id="todo-input"
-          ref={inputRef}
-          autoFocus
-          variant="surface"
-          placeholder="Write your mind…"
-          radius="medium"
-          size="3"
-          onKeyDown={handleKeyDown}
-          className=" outline-violet3"
-        />
-      </TextField.Root>
+    <div className=" flex h-full items-center px-4">
+      <TextField
+        ref={inputRef}
+        type="text"
+        placeholder="Write your mind..."
+        onKeyDown={handleKeyDown}
+        className="h-10 bg-background font-mono"
+      />
       <div className="ml-3">
-        <IconButton
-          size="4"
-          variant="ghost"
-          radius="full"
+        <Button
+          size="icon"
+          variant="secondary"
+          className="bg-accent-light"
           onClick={handleSubmit}
         >
           <PaperPlaneIcon
-            height="24"
-            width="24"
-            className="fill-violet8"
-            color="violet8"
+            height="20"
+            width="20"
+            className="fill-accent-foreground"
+            color="accent"
           />
-        </IconButton>
+        </Button>
       </div>
-    </Flex>
+    </div>
   );
 };
 

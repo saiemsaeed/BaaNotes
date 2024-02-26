@@ -1,6 +1,8 @@
+'use client';
+
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
-import { IconButton } from '@radix-ui/themes';
 import { FC, useEffect, useState } from 'react';
+import { Button } from './ui/button';
 
 export const useTheme = () => {
   const theme = document.documentElement.classList.contains('dark')
@@ -51,14 +53,14 @@ const ThemeSwitch = () => {
   return (
     <>
       {isDarkTheme && (
-        <IconButton onClick={handleLightMode} variant="ghost" size="4">
-          <SunIcon height={20} width={20} className="text-inverted" />
-        </IconButton>
+        <Button onClick={handleLightMode} variant="ghost" size="icon">
+          <SunIcon className="text-inverted" />
+        </Button>
       )}
       {!isDarkTheme && (
-        <IconButton onClick={handleDarkMode} variant="ghost" size="4">
-          <MoonIcon height={20} width={20} className="text-inverted" />
-        </IconButton>
+        <Button onClick={handleDarkMode} variant="ghost" size="icon">
+          <MoonIcon className="text-inverted" />
+        </Button>
       )}
     </>
   );

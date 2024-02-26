@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import './globals.css';
-import { Theme } from '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
+import '../styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrains = JetBrains_Mono({
@@ -22,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${jetbrains.variable}`}>
-        <Theme scaling="100%">{children}</Theme>
+      <body className={`${inter.variable} ${jetbrains.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );

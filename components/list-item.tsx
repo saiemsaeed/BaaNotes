@@ -1,4 +1,3 @@
-import { Box } from '@radix-ui/themes';
 import { on } from 'events';
 import { PropsWithChildren, useRef } from 'react';
 
@@ -21,12 +20,10 @@ const ListItem = ({
 
     return () => {
       tapCount++; // Increase tap count
-
       // If it's the first tap, start the timer
       if (tapCount === 1) {
         tapTimer = setTimeout(() => {
           // Reset tap count after 500ms
-          console.log('object 1 timer');
           tapCount = 0;
         }, 500);
       } else if (tapCount === 2) {
@@ -39,14 +36,14 @@ const ListItem = ({
   };
 
   return (
-    <Box
+    <div
       ref={buttonRef}
       // onClick={handleTap()}
       onTouchEnd={handleTap()}
       {...props}
     >
       {children}
-    </Box>
+    </div>
   );
 };
 
