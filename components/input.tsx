@@ -31,19 +31,19 @@ const Input = ({ addTodo }: Props) => {
         type="text"
         placeholder="Write your mind..."
         onKeyDown={handleKeyDown}
-        className="h-10 bg-background font-mono text-[16px]"
+        className="h-10 bg-background text-[16px]"
       />
       <div className="ml-3">
         <Button
           size="icon"
           variant="secondary"
-          className="bg-accent-light"
+          className="bg-primary"
           onClick={handleSubmit}
         >
           <PaperPlaneIcon
             height="20"
             width="20"
-            className="fill-accent-foreground"
+            className="fill-primary-foreground"
             color="accent"
           />
         </Button>

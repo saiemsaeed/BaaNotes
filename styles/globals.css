@@ -8,10 +8,11 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --primary: var(--violet-8);
+    --primary-foreground: 222.2 84% 4.9%;
 
-    --accent-light: var(--violet-6);
-    --accent: var(--violet-8);
-    --accent-foreground: var(--violet-10);
+    --accent: var(--violet-9);
+    --accent-foreground: var(--violet-4);
 
     --muted: 0 0% 90%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -23,9 +24,11 @@
     --background: 240, 10%, 4%;
     --foreground: 210 40% 98%;
 
-    --accent-light: var(--violet-8);
-    --accent: var(--violet-5);
-    --accent-foreground: var(--violet-3);
+    --primary: var(--violet-5);
+    --primary-foreground: 210 40% 98%;
+
+    --accent: var(--violet-11);
+    --accent-foreground: var(--violet-5);
 
     --muted: 0 0 10%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -34,7 +37,7 @@
 
 @layer base {
   * {
-    @apply border-accent-light;
+    @apply border-primary;
   }
   body {
     @apply bg-background text-foreground;

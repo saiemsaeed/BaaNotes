@@ -5,9 +5,8 @@ import Checkbox from '@/components/checkbox';
 import Header from '@/components/header';
 import Input from '@/components/input';
 import ListItem from '@/components/list-item';
-import { atom, useAtom } from 'jotai';
+import { useAtom } from 'jotai';
 import { nanoid } from 'nanoid';
-import dynamic from 'next/dynamic';
 
 export default function Home() {
   const [dodos, setDodos] = useAtom(dodoAtom);
@@ -44,8 +43,8 @@ export default function Home() {
       {dodos.map((dodo, index) => (
         <ListItem
           key={index}
-          className={`flex h-12 items-center font-sans text-xl ${
-            index === 0 ? '' : 'border-muted border-t-[1px]'
+          className={`flex h-12 items-center text-xl ${
+            index === 0 ? '' : 'border-t-[1px] border-muted'
           }`}
           onDoubleTap={() => {
             updateDodo(index, !dodo.completed);
@@ -60,7 +59,7 @@ export default function Home() {
         </ListItem>
       ))}
       <div className=" h-28" />
-      <div className="bg-muted fixed bottom-0 left-0 right-0 h-14">
+      <div className="fixed bottom-0 left-0 right-0 h-14 bg-muted">
         <Input addTodo={addTodo} />
       </div>
     </div>

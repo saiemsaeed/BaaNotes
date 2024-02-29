@@ -26,10 +26,13 @@ const config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
         accent: {
           DEFAULT: 'var(--accent)',
           foreground: 'var(--accent-foreground)',
-          light: 'var(--accent-light)',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',

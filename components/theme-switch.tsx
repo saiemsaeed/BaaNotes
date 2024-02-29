@@ -53,13 +53,18 @@ const ThemeSwitch = () => {
   return (
     <>
       {isDarkTheme && (
-        <Button onClick={handleLightMode} variant="ghost" size="icon">
-          <SunIcon className="text-inverted" />
+        <Button
+          onClick={handleLightMode}
+          variant="ghost"
+          size="icon"
+          className="hover:bg-accent active:bg-accent"
+        >
+          <SunIcon />
         </Button>
       )}
       {!isDarkTheme && (
         <Button onClick={handleDarkMode} variant="ghost" size="icon">
-          <MoonIcon className="text-inverted" />
+          <MoonIcon />
         </Button>
       )}
     </>
