@@ -37,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
 
   const handleFontDrawerClose = () => {
     setFontDrawerOpen(false);
+    setSelectedFont(activeFont);
   };
 
   const handleSelectedFontChange = (value: FontOptions) => {
@@ -54,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
   };
 
   return (
-    <header className=" bg-primary fixed left-0 right-0 top-0 mb-4 flex h-14 flex-grow items-center justify-between px-4">
+    <header className=" fixed left-0 right-0 top-0 mb-4 flex h-14 flex-grow items-center justify-between bg-primary px-4">
       <span>made with ❤️</span>
       <div className="flex">
         <ThemeSwitchButton />
@@ -85,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
           </MenubarMenu>
         </Menubar> */}
       </div>
-      <Drawer open={isFontDrawerOpen}>
+      <Drawer open={isFontDrawerOpen} onClose={handleFontDrawerClose}>
         <DrawerPortal>
           <DrawerContent className="rounded-none border-x-0">
             <DrawerHeader>
