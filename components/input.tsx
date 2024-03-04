@@ -25,25 +25,25 @@ const Input = ({ addTodo }: Props) => {
   };
 
   return (
-    <div className=" flex h-full items-center px-4">
+    <div className="flex h-full items-center border-t-[1px] px-4">
       <TextField
         ref={inputRef}
         type="text"
         placeholder="Write your mind..."
         onKeyDown={handleKeyDown}
-        className="h-10 bg-background text-[16px]"
+        className="h-10 border-muted bg-background text-[16px] outline-none"
       />
       <div className="ml-3">
         <Button
           size="icon"
           variant="secondary"
-          className="bg-primary"
+          className="bg-accent"
           onClick={handleSubmit}
         >
           <PaperPlaneIcon
             height="20"
             width="20"
-            className="fill-primary-foreground"
+            className="fill-accent-foreground"
             color="accent"
           />
         </Button>

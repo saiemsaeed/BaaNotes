@@ -40,26 +40,27 @@ export default function Home() {
       <div className="hidden ">
         <Input addTodo={addTodo} />
       </div>
-      {dodos.map((dodo, index) => (
+      {dodos.map(({ text, completed }, index) => (
         <ListItem
           key={index}
-          className={`flex h-12 items-center text-xl ${
-            index === 0 ? '' : 'border-t-[1px] border-muted'
-          }`}
+          className={`flex items-center py-4 text-xl`}
           onDoubleTap={() => {
-            updateDodo(index, !dodo.completed);
+            updateDodo(index, !completed);
           }}
         >
+          <span
+            className={`mr-4 w-0 flex-grow text-wrap break-words text-[15px] text-lg leading-6 ${completed ? 'line-through' : ''}`}
+          >
+            {text}
+          </span>
           <Checkbox
-            id={dodo.id}
-            label={dodo.text}
-            isCompleted={dodo.completed}
+            isCompleted={completed}
             updateDodo={(isComplete) => updateDodo(index, isComplete)}
           />
         </ListItem>
       ))}
       <div className=" h-28" />
-      <div className="fixed bottom-0 left-0 right-0 h-14 bg-muted">
+      <div className="fixed bottom-0 left-0 right-0 h-14 bg-background">
         <Input addTodo={addTodo} />
       </div>
     </div>

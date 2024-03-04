@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${inter.variable} ${jetbrains.variable} font-mono`}
+      className={`dark ${inter.variable} ${jetbrains.variable} font-sans`}
     >
       <body className={`antialiased`}>{children}</body>
     </html>
