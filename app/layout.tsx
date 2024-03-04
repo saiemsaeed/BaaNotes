@@ -9,7 +9,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Hublist - A Simple Todo App',
+  title: 'BaaNotes - Note Taking Made Fun',
   description: 'Created with Love by @saiemsaeed for Baaa',
 };
 
