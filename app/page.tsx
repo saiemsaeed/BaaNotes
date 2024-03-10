@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <div className="mx-4">
+    <div>
       <Header />
       <div className="h-14" />
       <div className="hidden ">

@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="en"
       className={`dark ${inter.variable} ${jetbrains.variable} font-sans`}
     >
-      <body className={`antialiased`}>{children}</body>
+      <body className={`m-4 antialiased`}>{children}</body>
     </html>
   );
 }
