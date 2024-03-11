@@ -6,7 +6,9 @@ import { cookies } from 'next/headers';
 export async function verifyAndCreateCookie(idToken: string) {
   try {
     const expiresIn = 60 * 60 * 24 * 5 * 1000;
-    const cookie = await serverAuth.createSessionCookie(idToken, { expiresIn });
+    const cookie = await serverAuth().createSessionCookie(idToken, {
+      expiresIn,
+    });
 
     cookies().set({
       name: 'session',
@@ -15,6 +17,7 @@ export async function verifyAndCreateCookie(idToken: string) {
       httpOnly: true,
       secure: true,
     });
+
     return true;
   } catch (e) {
     console.error(e);

@@ -3,6 +3,10 @@ import { NextResponse, NextRequest } from 'next/server';
 export async function middleware(request: NextRequest) {
   const sessionCookieValue = request.cookies.get('session')?.value || '';
 
+  if (!sessionCookieValue && request.nextUrl.pathname === '/login') {
+    return NextResponse.next();
+  }
+
   const apiResponse = await fetch(`${request.nextUrl.origin}/api/auth`, {
     headers: {
       Authorization: sessionCookieValue,
